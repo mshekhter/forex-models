@@ -1,0 +1,44 @@
+AB scorer results. pass/acceptable
+
+A+B long cols : 7
+A+B short cols: 7
+long hard negatives train/test : 12856 7085
+short hard negatives train/test: 12726 7085
+
+Admission scorer test metrics
+  label              model  train_rows  train_pos  train_neg  test_rows  test_pos  test_neg  train_auc  test_auc  test_top_decile_k  test_top_decile_precision  test_top_decile_lift  test_top_ventile_k  test_top_ventile_precision  test_top_ventile_lift  test_pos_pct_p10  test_pos_pct_p25  test_pos_pct_p50  test_pos_pct_p75  test_pos_pct_p90
+ y_long regularized_linear       16570       3714      12856       8890      1805      7085   0.778792  0.771784                889                   0.509561              2.509695                 445                    0.557303               2.744835          0.383186          0.553953          0.747797          0.890284          0.963500
+y_short regularized_linear       16368       3642      12726       8894      1809      7085   0.775925  0.768859                890                   0.540449              2.657135                 445                    0.608989               2.994111          0.377041          0.552358          0.767534          0.905670          0.971432
+
+Long regularized linear top coefficients
+                             feature      coef  abs_coef
+famB_final_pullback_from_peak_up_w12  0.903216  0.903216
+      famA_net_support_balance_up_w6  0.870067  0.870067
+       famA_support_efficiency_up_w6 -0.774111  0.774111
+              famA_damage_flow_up_w6  0.689936  0.689936
+   famB_max_pullback_from_peak_up_w6 -0.344890  0.344890
+             famB_slope_3_add_up_w12 -0.256448  0.256448
+      famA_support_efficiency_up_w12  0.054352  0.054352
+
+Short regularized linear top coefficients
+                             feature      coef  abs_coef
+famB_final_pullback_from_peak_dn_w12  1.158788  1.158788
+      famA_net_support_balance_dn_w6  0.771838  0.771838
+              famA_damage_flow_dn_w6  0.697578  0.697578
+       famA_support_efficiency_dn_w6 -0.625139  0.625139
+   famB_max_pullback_from_peak_dn_w6 -0.455112  0.455112
+             famB_slope_3_add_dn_w12 -0.279937  0.279937
+      famA_support_efficiency_dn_w12  0.230790  0.230790
+
+Score columns written to df_model:
+['score_long_ab', 'score_short_ab', 'score_long_ab_pct', 'score_short_ab_pct']
+
+Frozen artifacts:
+admit_model_long
+admit_model_short
+admit_artifact_long
+admit_artifact_short
+admit_feature_cols_long
+admit_feature_cols_short
+admit_score_cols
+admit_train_split_date
